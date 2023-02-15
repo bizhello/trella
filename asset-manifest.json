@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/trella/static/css/main.a14b3f58.css",
+    "main.js": "/trella/static/js/main.57890855.js",
+    "index.html": "/trella/index.html",
+    "main.a14b3f58.css.map": "/trella/static/css/main.a14b3f58.css.map",
+    "main.57890855.js.map": "/trella/static/js/main.57890855.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a14b3f58.css",
+    "static/js/main.57890855.js"
+  ]
+}
