@@ -1,0 +1,45 @@
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    margin: 5%;
+    padding: 5%;
+    background-color: white;
+    transition: 0.5s background-color;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgba(112, 108, 108, 0.5);
+}
+.card__title {
+    color: white;
+    border-radius: 7%;
+    background-color: rgb(165, 231, 124);
+}
+.card__text {
+    padding: 5% 0;
+    font-size: small;
+}
+.card__button {
+    display: block;
+    margin-left: auto;
+    background-color: aliceblue;
+}
+
+.card__button:hover {
+    cursor: pointer;
+}
+
+.card:hover {
+    background-color: beige;
+    cursor: pointer;
+    animation: forwards rotation 0.5s;
+}
+
+@keyframes rotation {
+    from {
+        bottom: 1px
+    }
+    to {
+        bottom: 5px
+    }
+} 

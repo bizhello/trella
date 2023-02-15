@@ -1,0 +1,31 @@
+.boards {
+    width: 65%;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 3% auto;
+}
+
+.board {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30%;
+    min-height: 200px;
+    background-color: aliceblue;
+}
+.board__title {
+    text-align: center;
+    padding: 5% 0;
+}
+.board__button {
+    color:  rgb(63, 68, 72);;
+    border: none;
+    background-color: aliceblue;
+    margin-top: auto;
+    margin-bottom: 5%;
+}
+.board__button:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
