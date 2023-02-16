@@ -11,11 +11,12 @@ import './style.css'
 
 const Boards = () => {
 
+    // FIXME: в идеале лучше использовать селекторы, куда можно помещать часть логики по выборке (либа Reselect)
     const boards = useAppSelector(state => state.boards.boards)
     const currentBoard = useAppSelector(state => state.currentBoard.currentBoard)
     const currentItem = useAppSelector(state => state.currentItem.currentItem)
     const dispatch = useAppDispatch();
-  
+    // FIXME Стоит компоненту навешивать какой-то класс по условию, а не засорять код компонента инлайн-стилями.
     function dragOverHandler(e: React.DragEvent<HTMLDivElement>): void {
       e.preventDefault();
       if (e.currentTarget.className === "card") {
@@ -25,6 +26,10 @@ const Boards = () => {
    
     function dropCardHandler(e: React.DragEvent<HTMLDivElement>, board: IBoard) {
       e.preventDefault();
+      // FIXME
+      // сложные условия лучше обозначать переменной с симантическим названием:
+      // const isCurrentBoardHasSomething = currentItem && currentBoard && board.items.length === 0;
+      // if (isCurrentBoardHasSomething) {...}
       if (currentItem && currentBoard && board.items.length === 0) {
 
         const cloneBoard:IBoard = JSON.parse(JSON.stringify(board)) //put
@@ -51,6 +56,11 @@ const Boards = () => {
       dispatch(changeCurrentBoard(board))
     }
 
+    /* Замечание по тексту в элементах по типу "+ Add another card"
+       Зависит от проекта, но мы в своих проектах такие штуки не хардкодим,
+       а выносим в констатны.
+       Например, папка dictionary, где могут быть разные словари для текста элементов
+    */
     return (
         <div className="boards">
         {boards.map((board) => (
