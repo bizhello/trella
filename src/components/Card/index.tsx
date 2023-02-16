@@ -13,6 +13,9 @@ interface ICard {
     board: IBoard
 }
 
+// FIXME: разные отступы в компонентах. Скорее всего VSCode не настроен. Нужно придерживаться одного стиля.
+// Для js/ts проектов обычно используются два пробела. Можно настроить prettier и/или eslint (сложновато)
+
 const Card: FC <ICard> = ({ item, board }) => {
   let buttonDelete: EventTarget
   const deleteCard = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>, item: IItem, board: IBoard) => {
@@ -87,7 +90,9 @@ const Card: FC <ICard> = ({ item, board }) => {
         }
       }
 
-
+    // FIXME в данном месте не критично, но в целом передавать inplace коллбэки в компоненты
+    // плохая практика и заглязняет код. Тут можно сделать все коллбэки по примеру onDragStart={dragStartHandler}
+    // подумай, как это реализовать
     return (
         <div
             className="card"

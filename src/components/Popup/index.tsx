@@ -34,6 +34,7 @@ const PopupAddNewCard = () => {
     const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>)=> {
         e.preventDefault();
         if (popup.popupAdd) {
+            // FIXME: используй let там, где предполагается переопределение переменной. Для остального const
             let createId = Date.now()
             let createItem = {
                 id: createId,
@@ -47,6 +48,7 @@ const PopupAddNewCard = () => {
 
             dispatch(addItem(payload))
             dispatch(handlePopup({
+                // Если имеется ограниченный набор namePopup, то их стоит выносить в enum, а не хардкодить
                 namePopup: 'popupAdd',
                 isPopup: false
             }));
